@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763184bd-7583-4a37-bf77-8d9ef855ed0a" name="Changes" comment="actualizacion2" />
+    <list default="true" id="763184bd-7583-4a37-bf77-8d9ef855ed0a" name="Changes" comment="actualizacion2">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,9 +42,15 @@
         <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/EnriqueGutierrez23/AppOnBoarding.git",
+    "accountId": "636d8622-3724-404f-bb61-4fe03adfd637"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -63,9 +71,9 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "prueba",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   },
   "keyToStringList": {
     "kotlin-gradle-user-dirs": [
