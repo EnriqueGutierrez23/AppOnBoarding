@@ -15,31 +15,20 @@ import com.example.onboardingproyecto.dataStore.StoreBoarding
 
 @Composable
 fun ButtonFinish(currentPager: Int, navController: NavController, store: StoreBoarding) {
-    Box(
+    Row(
         modifier = Modifier
-            .fillMaxSize()
             .padding(20.dp)
-    ) {
-        if (currentPager != 2) {
-            Row(
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .offset(y = 100.dp)
-            ) {
-                OutlinedButton(
-                    onClick = {
-                        navController.navigate("home") {
-                            popUpTo(0)
-                        }
-                    },
-                    modifier = Modifier.padding(horizontal = 40.dp)
-                ) {
-                    Text(
-                        text = "Entrar",
-                        modifier = Modifier.padding(vertical = 8.dp),
-                        color = Color.Gray
-                    )
-                }
+            .fillMaxWidth(),
+        horizontalArrangement = if(currentPager !=2) Arrangement.SpaceBetween else Arrangement.Center
+    ){
+        if(currentPager == 2){
+            OutlinedButton(onClick = {
+                navController.navigate("home")
+            }){
+                Text(text = "Entrar", modifier = Modifier
+                    .padding(vertical = 8.dp, horizontal = 40.dp)
+                    , color = Color.Gray
+                )
             }
         }
     }

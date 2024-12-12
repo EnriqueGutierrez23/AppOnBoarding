@@ -3,8 +3,8 @@ package com.example.onboardingproyecto.onBoardViews
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -25,7 +25,6 @@ import com.google.accompanist.pager.PagerState
 import androidx.navigation.NavController
 import com.example.onboardingproyecto.dataStore.StoreBoarding
 
-
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun OnBoardingPager(
@@ -35,51 +34,47 @@ fun OnBoardingPager(
     navController: NavController,
     store: StoreBoarding
 ) {
-    Box(modifier = modifier.fillMaxHeight()) {
-        Column(
-            modifier = Modifier.fillMaxHeight(),
-            verticalArrangement = Arrangement.Center,  
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            HorizontalPager(state = pagerState) { page ->
+
+    Box(modifier = modifier) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            HorizontalPager(state = pagerState){
+              page->
                 Column(
                     modifier = Modifier
-                        .padding(60.dp)
-                        .fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    // Animación centrada
-                    LoaderData(
-                        modifier = Modifier
-                            .size(200.dp)
-                            .align(Alignment.CenterHorizontally),
-                        image = item[page].imagen
-                    )
-                    // Título con menos padding superior
+                    .padding(60.dp)
+                    .fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ){
+
                     Text(
                         text = item[page].titulo,
-                        modifier = Modifier.padding(top = 1.dp),
+                        modifier = Modifier.padding(top = 10.dp),
                         color = Color.Black,
                         style = MaterialTheme.typography.displayMedium,
                         fontWeight = FontWeight.Bold
                     )
-                    // Descripción centrada
-                    Text(
+                    Text (
                         text = item[page].descripcion,
                         color = Color.Black,
                         textAlign = TextAlign.Center,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 20.sp
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold
+                        )
+                    PagerIndicator(size = item.size, currentPager = pagerState.currentPage)
+
+                    LoaderData(modifier = Modifier
+                        .size(200.dp)
+                        .fillMaxWidth()
+                        .align(Alignment.CenterHorizontally),
+                        item[page].imagen
                     )
+
                 }
             }
-            PagerIndicator(item.size, pagerState.currentPage)
         }
-
-
         Box(modifier = Modifier.align(Alignment.BottomCenter)) {
-
             ButtonFinish(pagerState.currentPage, navController, store)
         }
     }
+
 }

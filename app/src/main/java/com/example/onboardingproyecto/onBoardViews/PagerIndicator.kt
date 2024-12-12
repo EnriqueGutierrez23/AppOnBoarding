@@ -18,11 +18,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun PagerIndicator(size: Int, currentPager: Int) {
     Row(
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        modifier = Modifier.padding(top = 20.dp)
+        horizontalArrangement = Arrangement.Start,
+        modifier = Modifier.padding(top = 10.dp)
     ) {
-        repeat(size) { index ->
-            Indicator(isSelected = index == currentPager)
+        repeat(size) {
+            Indicator(isSelected = it==currentPager)
         }
     }
 }
@@ -35,7 +35,7 @@ fun Indicator(isSelected: Boolean) {
             .height(10.dp)
             .width(25.dp)
             .clip(CircleShape)
-            .background(if (isSelected) MaterialTheme.colorScheme.primary else Color.Gray)
+            .background(if (isSelected) Color .Red else Color.Gray)
     ) {
 
     }
