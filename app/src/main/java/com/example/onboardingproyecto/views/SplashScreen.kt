@@ -21,9 +21,9 @@ fun SplashScreen(navController: NavController, store: Boolean?) {
     screen = if (store == true) "home" else "onBoarding"
 
     LaunchedEffect(key1 = true) {
-        delay(5000) // Espera 3 segundos antes de navegar
+        delay(5000)
         navController.navigate(screen) {
-            popUpTo(0) { inclusive = true } // Asegura que no puedas volver al splash
+            popUpTo(0) { inclusive = true }
         }
     }
 

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt") // Habilitar KAPT
 }
 
 android {
@@ -50,7 +51,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -67,10 +67,24 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // Lottie
     implementation("com.google.accompanist:accompanist-pager:0.15.0")
     implementation("com.airbnb.android:lottie-compose:5.2.0")
+
+    // Navigation
     implementation("androidx.navigation:navigation-compose:2.5.3")
+
+    // Data Store
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
+    // Room Database
+    implementation("androidx.room:room-runtime:2.5.0")
+    kapt("androidx.room:room-compiler:2.5.0")  // Asegúrate de usar kapt
+    implementation("androidx.room:room-ktx:2.5.0")
 
+    // Jetpack Compose
+    implementation ("androidx.compose.ui:ui:1.5.0")
+    implementation ("androidx.compose.material3:material3:1.0.1")
+    implementation ("androidx.compose.foundation:foundation:1.5.0")
+    implementation ("androidx.compose.runtime:runtime:1.5.0")
 }
